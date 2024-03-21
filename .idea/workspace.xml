@@ -4,24 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b8701a2-1132-4a1f-8c29-643bb855ed82" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/GameOfLife.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/GameOfLifeShould.java" afterDir="false" />
+    <list default="true" id="0b8701a2-1132-4a1f-8c29-643bb855ed82" name="Changes" comment="feat: cell business rules">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/CellShould.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/CellShould.java" afterDir="false" />
     </list>
-    <list id="f1b1fd8d-b73f-4448-b23c-118d90f156ca" name="Changes by paulamasutier" comment="" />
+    <list id="f1b1fd8d-b73f-4448-b23c-118d90f156ca" name="Changes by paulamasutier" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/CellShould.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/CellShould.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/GameOfLifeShould.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/GameOfLifeShould.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,6 +33,29 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/test/java/org/example/CellShould.java">
+      <ranges>
+        <range start1="5" end1="7" start2="5" end2="6" changelist="0b8701a2-1132-4a1f-8c29-643bb855ed82" />
+        <range start1="27" end1="28" start2="26" end2="27" changelist="0b8701a2-1132-4a1f-8c29-643bb855ed82" />
+        <range start1="32" end1="33" start2="31" end2="32" changelist="0b8701a2-1132-4a1f-8c29-643bb855ed82" />
+        <range start1="37" end1="38" start2="36" end2="37" changelist="f1b1fd8d-b73f-4448-b23c-118d90f156ca" />
+        <range start1="42" end1="43" start2="41" end2="42" changelist="f1b1fd8d-b73f-4448-b23c-118d90f156ca" />
+        <range start1="47" end1="48" start2="46" end2="47" changelist="f1b1fd8d-b73f-4448-b23c-118d90f156ca" />
+        <range start1="52" end1="54" start2="51" end2="53" changelist="0b8701a2-1132-4a1f-8c29-643bb855ed82" />
+        <range start1="58" end1="60" start2="57" end2="59" changelist="0b8701a2-1132-4a1f-8c29-643bb855ed82" />
+        <range start1="61" end1="62" start2="60" end2="60" changelist="f1b1fd8d-b73f-4448-b23c-118d90f156ca" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/org/example/Cell.java">
+      <ranges>
+        <range start1="3" end1="6" start2="3" end2="9" changelist="f1b1fd8d-b73f-4448-b23c-118d90f156ca" />
+        <range start1="9" end1="12" start2="12" end2="15" changelist="f1b1fd8d-b73f-4448-b23c-118d90f156ca" />
+        <range start1="13" end1="15" start2="16" end2="18" changelist="f1b1fd8d-b73f-4448-b23c-118d90f156ca" />
+        <range start1="18" end1="18" start2="21" end2="33" changelist="0b8701a2-1132-4a1f-8c29-643bb855ed82" />
+      </ranges>
+    </file>
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 3
@@ -120,8 +135,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1711015431471</updated>
-      <workItem from="1711015433472" duration="3534000" />
+      <workItem from="1711015433472" duration="5515000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: cell business rules">
+      <option name="closed" value="true" />
+      <created>1711019435841</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1711019435841</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: cell business rules">
+      <option name="closed" value="true" />
+      <created>1711019456967</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1711019456967</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,5 +169,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: cell business rules" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: cell business rules" />
   </component>
 </project>

@@ -3,8 +3,7 @@ package org.example;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CellShould {
 
@@ -25,39 +24,38 @@ public class CellShould {
 
     @BeforeEach
     void setup(){
-        aliveCell = new Cell(true);
+        aliveCell = new Cell(Cell.Status.ALIVE);
     }
 
     @Test
     public void die_with_one_neighbour(){
-        assertFalse(aliveCell.livesToNextGeneration(1));
+        assertEquals(Cell.Status.DEAD, aliveCell.livesToNextGeneration(1));
     }
 
     @Test
     public void die_with_zero_neighbours() {
-        assertFalse(aliveCell.livesToNextGeneration(0));
+        assertEquals(Cell.Status.DEAD, aliveCell.livesToNextGeneration(0));
     }
 
     @Test
     public void die_with_four_neighbours(){
-        assertFalse(aliveCell.livesToNextGeneration(4));
+        assertEquals(Cell.Status.DEAD, aliveCell.livesToNextGeneration(4));
     }
 
     @Test
     public void die_with_five_neighbours() {
-        assertFalse(aliveCell.livesToNextGeneration(5));
+        assertEquals(Cell.Status.DEAD, aliveCell.livesToNextGeneration(5));
     }
 
     @Test
     public void stays_alive_with_2_or_3_neighbours(){
-        assertTrue(aliveCell.livesToNextGeneration(2));
-        assertTrue(aliveCell.livesToNextGeneration(3));
+        assertEquals(Cell.Status.ALIVE, aliveCell.livesToNextGeneration(2));
+        assertEquals(Cell.Status.ALIVE, aliveCell.livesToNextGeneration(3));
     }
 
     @Test
     public void dead_cell_becomes_alive_with_three_neighbours(){
-        Cell deadCell = new Cell(false);
-        assertTrue(deadCell.livesToNextGeneration(3));
+        Cell deadCell = new Cell(Cell.Status.DEAD);
+        assertEquals(Cell.Status.ALIVE, deadCell.livesToNextGeneration(3));
     }
-
 }

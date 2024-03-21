@@ -1,20 +1,35 @@
 package org.example;
 
 public class Cell {
-    private boolean cellState;
-    
-    public Cell(boolean state) {
+    private Status cellState;
+    public enum Status {
+        ALIVE,
+        DEAD
+    }
+    public Cell(Status state) {
         this.cellState = state;
     }
 
-    public boolean livesToNextGeneration(Integer neighbourCount) {
-        if(neighbourCount < 2 || neighbourCount > 3) {
-            cellState = false;
+    public Status livesToNextGeneration(Integer neighbourCount) {
+        if(underPopulated(neighbourCount) || overPopulated(neighbourCount)) {
+            cellState = Status.DEAD;
         }
-        if(neighbourCount == 3) {
-            cellState = true;
+        if(perfectConditions(neighbourCount)) {
+            cellState = Status.ALIVE;
         }
         return cellState;
+    }
+
+    private static boolean perfectConditions(Integer neighbourCount) {
+        return neighbourCount == 3;
+    }
+
+    private static boolean overPopulated(Integer neighbourCount) {
+        return neighbourCount > 3;
+    }
+
+    private static boolean underPopulated(Integer neighbourCount) {
+        return neighbourCount < 2;
     }
 
 }

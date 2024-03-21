@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b8701a2-1132-4a1f-8c29-643bb855ed82" name="Changes" comment="feat: cell business rules">
+    <list default="true" id="0b8701a2-1132-4a1f-8c29-643bb855ed82" name="Changes" comment="refactor: changed true false status to an enum status">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameOfLife.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameOfLife.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/CellShould.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/CellShould.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/GameOfLifeShould.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/GameOfLifeShould.java" afterDir="false" />
     </list>
     <list id="f1b1fd8d-b73f-4448-b23c-118d90f156ca" name="Changes by paulamasutier" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/CellShould.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/CellShould.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/GameOfLifeShould.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/GameOfLifeShould.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,23 +37,13 @@
   <component name="LineStatusTrackerManager">
     <file path="$PROJECT_DIR$/src/test/java/org/example/CellShould.java">
       <ranges>
-        <range start1="5" end1="7" start2="5" end2="6" changelist="0b8701a2-1132-4a1f-8c29-643bb855ed82" />
-        <range start1="27" end1="28" start2="26" end2="27" changelist="0b8701a2-1132-4a1f-8c29-643bb855ed82" />
-        <range start1="32" end1="33" start2="31" end2="32" changelist="0b8701a2-1132-4a1f-8c29-643bb855ed82" />
-        <range start1="37" end1="38" start2="36" end2="37" changelist="f1b1fd8d-b73f-4448-b23c-118d90f156ca" />
-        <range start1="42" end1="43" start2="41" end2="42" changelist="f1b1fd8d-b73f-4448-b23c-118d90f156ca" />
-        <range start1="47" end1="48" start2="46" end2="47" changelist="f1b1fd8d-b73f-4448-b23c-118d90f156ca" />
-        <range start1="52" end1="54" start2="51" end2="53" changelist="0b8701a2-1132-4a1f-8c29-643bb855ed82" />
-        <range start1="58" end1="60" start2="57" end2="59" changelist="0b8701a2-1132-4a1f-8c29-643bb855ed82" />
-        <range start1="61" end1="62" start2="60" end2="60" changelist="f1b1fd8d-b73f-4448-b23c-118d90f156ca" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/org/example/Cell.java">
-      <ranges>
-        <range start1="3" end1="6" start2="3" end2="9" changelist="f1b1fd8d-b73f-4448-b23c-118d90f156ca" />
-        <range start1="9" end1="12" start2="12" end2="15" changelist="f1b1fd8d-b73f-4448-b23c-118d90f156ca" />
-        <range start1="13" end1="15" start2="16" end2="18" changelist="f1b1fd8d-b73f-4448-b23c-118d90f156ca" />
-        <range start1="18" end1="18" start2="21" end2="33" changelist="0b8701a2-1132-4a1f-8c29-643bb855ed82" />
+        <range start1="26" end1="27" start2="26" end2="27" changelist="f1b1fd8d-b73f-4448-b23c-118d90f156ca" />
+        <range start1="31" end1="32" start2="31" end2="32" changelist="0b8701a2-1132-4a1f-8c29-643bb855ed82" />
+        <range start1="36" end1="37" start2="36" end2="37" changelist="f1b1fd8d-b73f-4448-b23c-118d90f156ca" />
+        <range start1="41" end1="42" start2="41" end2="42" changelist="0b8701a2-1132-4a1f-8c29-643bb855ed82" />
+        <range start1="46" end1="47" start2="46" end2="47" changelist="0b8701a2-1132-4a1f-8c29-643bb855ed82" />
+        <range start1="51" end1="53" start2="51" end2="53" changelist="0b8701a2-1132-4a1f-8c29-643bb855ed82" />
+        <range start1="57" end1="59" start2="57" end2="59" changelist="f1b1fd8d-b73f-4448-b23c-118d90f156ca" />
       </ranges>
     </file>
   </component>
@@ -70,7 +60,9 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Gradle.CellShould (1).executor": "Run",
+    "Gradle.CellShould.die_with_one_neighbour.executor": "Run",
     "Gradle.CellShould.executor": "Run",
+    "Gradle.GameOfLifeShould.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -89,7 +81,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.GameOfLifeShould">
     <configuration name="CellShould" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -114,9 +106,59 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="CellShould.die_with_one_neighbour" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.example.CellShould.die_with_one_neighbour&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="GameOfLifeShould" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.example.GameOfLifeShould&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.GameOfLifeShould" />
         <item itemvalue="Gradle.CellShould" />
+        <item itemvalue="Gradle.CellShould.die_with_one_neighbour" />
       </list>
     </recent_temporary>
   </component>
@@ -135,7 +177,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1711015431471</updated>
-      <workItem from="1711015433472" duration="5515000" />
+      <workItem from="1711015433472" duration="8932000" />
     </task>
     <task id="LOCAL-00001" summary="feat: cell business rules">
       <option name="closed" value="true" />
@@ -153,7 +195,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711019456967</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="refactor: changed true false status to an enum status">
+      <option name="closed" value="true" />
+      <created>1711021377050</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1711021377050</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +222,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: cell business rules" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: cell business rules" />
+    <MESSAGE value="refactor: changed true false status to an enum status" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: changed true false status to an enum status" />
   </component>
 </project>

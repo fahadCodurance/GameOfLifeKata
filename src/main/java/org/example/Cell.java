@@ -1,21 +1,19 @@
 package org.example;
 
 public class Cell {
-    private Status cellState;
-    public enum Status {
-        ALIVE,
-        DEAD
-    }
-    public Cell(Status state) {
+    private boolean cellState;
+    private final boolean ALIVE = true;
+    private final boolean DEAD = false;
+    public Cell(boolean state) {
         this.cellState = state;
     }
 
-    public Status livesToNextGeneration(Integer neighbourCount) {
+    public boolean livesToNextGeneration(Integer neighbourCount) {
         if(underPopulated(neighbourCount) || overPopulated(neighbourCount)) {
-            cellState = Status.DEAD;
+            cellState = DEAD;
         }
         if(perfectConditions(neighbourCount)) {
-            cellState = Status.ALIVE;
+            cellState = ALIVE;
         }
         return cellState;
     }

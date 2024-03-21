@@ -24,38 +24,38 @@ public class CellShould {
 
     @BeforeEach
     void setup(){
-        aliveCell = new Cell(Cell.Status.ALIVE);
+        aliveCell = new Cell(true);
     }
 
     @Test
     public void die_with_one_neighbour(){
-        assertEquals(Cell.Status.DEAD, aliveCell.livesToNextGeneration(1));
+        assertFalse(aliveCell.livesToNextGeneration(1));
     }
 
     @Test
     public void die_with_zero_neighbours() {
-        assertEquals(Cell.Status.DEAD, aliveCell.livesToNextGeneration(0));
+        assertFalse(aliveCell.livesToNextGeneration(0));
     }
 
     @Test
     public void die_with_four_neighbours(){
-        assertEquals(Cell.Status.DEAD, aliveCell.livesToNextGeneration(4));
+        assertFalse(aliveCell.livesToNextGeneration(4));
     }
 
     @Test
     public void die_with_five_neighbours() {
-        assertEquals(Cell.Status.DEAD, aliveCell.livesToNextGeneration(5));
+        assertFalse(aliveCell.livesToNextGeneration(5));
     }
 
     @Test
     public void stays_alive_with_2_or_3_neighbours(){
-        assertEquals(Cell.Status.ALIVE, aliveCell.livesToNextGeneration(2));
-        assertEquals(Cell.Status.ALIVE, aliveCell.livesToNextGeneration(3));
+        assertTrue(aliveCell.livesToNextGeneration(2));
+        assertTrue(aliveCell.livesToNextGeneration(3));
     }
 
     @Test
     public void dead_cell_becomes_alive_with_three_neighbours(){
-        Cell deadCell = new Cell(Cell.Status.DEAD);
-        assertEquals(Cell.Status.ALIVE, deadCell.livesToNextGeneration(3));
+        Cell deadCell = new Cell(false);
+        assertTrue(deadCell.livesToNextGeneration(3));
     }
 }
